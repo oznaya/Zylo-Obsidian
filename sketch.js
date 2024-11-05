@@ -170,7 +170,7 @@ function mousePressed() {
         startAudio = true;
     }
 }
-
+//I dont know why it isnt loading on the website
 // Function to handle key presses
 function keyPressed() {
     if (key === 'e' || key === 'E') {
