@@ -43,6 +43,8 @@ function preload() {
 
 function setup() {
     createCanvas(innerWidth, innerHeight);
+    let context = canvas.elt.getContext('2d', { willReadFrequently: true });
+    drawingContext = context;
 
     mic = new p5.AudioIn();
     mic.start();
@@ -109,6 +111,8 @@ function draw() {
     }
 
     textAlign(CENTER, CENTER);
+    stroke(0, 50);
+    strokeWeight(height*0.01);
     textSize(height * 0.06);
     textFont(myFont);
     fill(230, 86, 8);
@@ -246,11 +250,14 @@ function showImage() {
     } else {
         draw = originalDraw; // Restore the original draw function
         startAudio = false;
+        showEndItText = false;
     }
 }
 
 function showEnd(){
     showEndText = true;
     fill(230, 86, 8);
+    stroke(0, 50);
+    strokeWeight(height*0.01);
     text("Press E to END IT", width / 2, height*0.8);
 }
