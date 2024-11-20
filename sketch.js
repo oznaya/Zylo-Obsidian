@@ -5,6 +5,7 @@ let currentShape = 0;
 let startAudio = false;
 let showIntro = true;
 let showText = false;
+let showEndText = false; 
 
 let maxStars = 7300;
 let scatteredCircles = [];
@@ -66,8 +67,7 @@ function setup() {
 
     // Create the sensitivity slider
     sensitivitySlider = createSlider(0, 1, 0.5, 0.01); // min, max, default, step
-    sensitivitySlider.position(20, 20); // Position on the canvas
-    sensitivitySlider.style('width', '200px'); // Width of the slider
+    sensitivitySlider.id('sensitivitySlider'); // Assign an ID to the slider
 }
 
 function draw() {
@@ -120,7 +120,6 @@ function draw() {
 
     if (startAudio) {
 
-
         fft.analyze();
         let vol = mic.getLevel();
         let bassEnergy = fft.getEnergy("bass");
@@ -157,7 +156,6 @@ function draw() {
         } else if (trebleEnergy >= 0 && trebleEnergy < 50) {
             currentShape = 2;
             console.log("Treble");
-
         } else {
             console.log("Default");
         }
@@ -170,6 +168,8 @@ function draw() {
             showRandomImages = true;
             randomImageStartTime = millis();
         }
+
+        setTimeout(showEnd, 30000);
 
         //debugMode = false; // Set to true to enable debug mode
 
@@ -186,7 +186,14 @@ function draw() {
         //     text(`Current Shape: ${currentShape}`, 10, 110);
         //     text(`Sensitivity: ${nf(sensitivity, 0, 2)}`, 10, 130); // Display sensitivity value
         // }
+
+   
     }
+
+  if(showEndText){
+    showEnd(); 
+  }
+
 
     console.log(startAudio);
 
@@ -240,4 +247,10 @@ function showImage() {
         draw = originalDraw; // Restore the original draw function
         startAudio = false;
     }
+}
+
+function showEnd(){
+    showEndText = true;
+    fill(230, 86, 8);
+    text("Press E to END IT", width / 2, height*0.8);
 }

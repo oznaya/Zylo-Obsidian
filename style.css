@@ -5,3 +5,53 @@ html, body {
 canvas {
   display: block;
 }
+
+  /* Style the slider */
+  #sensitivitySlider {
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+    position: absolute; 
+    top:2vh; /* Position the slider */
+    left: 1vw; /* Position the slider */
+    width: 30%; /* Full-width */
+    height: 1vh; /* Slider thickness */
+    background: #7585ff; /* Slider background */
+    outline: none; /* Remove outline */
+    border-radius: 1vh; /* Rounded corners */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    transition: opacity .2s; /* 0.2 seconds transition on hover */
+  }
+  
+  /* Mouse-over effects */
+  #sensitivitySlider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use webkit (Chrome, Opera, Safari, Edge) */
+  #sensitivitySlider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 2vh; /* Handle height */
+    height: 2vh; /* Handle width */
+    background: #4c70af; /* Green handle */
+    border-radius: 50%; /* Make it a circle */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  /* The slider handle (use for Firefox) */
+  #sensitivitySlider::-moz-range-thumb {
+    width: 25px; /* Handle width */
+    height: 25px; /* Handle height */
+    background: #4c70af; /* Green handle */
+    border-radius: 50%; /* Make it a circle */
+    cursor: pointer; /* Cursor on hover */
+  }
+  
+  /* The slider handle (use for Internet Explorer) */
+  #sensitivitySlider::-ms-thumb {
+    width: 25px; /* Handle width */
+    height: 25px; /* Handle height */
+    background: #4c70af; /* Green handle */
+    border-radius: 50%; /* Make it a circle */
+    cursor: pointer; /* Cursor on hover */
+  }
