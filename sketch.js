@@ -43,8 +43,6 @@ function preload() {
 
 function setup() {
     createCanvas(innerWidth, innerHeight);
-    let context = canvas.elt.getContext('2d', { willReadFrequently: true });
-    drawingContext = context;
 
     mic = new p5.AudioIn();
     mic.start();
