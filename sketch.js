@@ -31,13 +31,13 @@ function preload() {
     one = loadImage('UPDATE/ObsidianPunch.png');
     two = loadImage('UPDATE/ZoidPunch.png');
     three = loadImage('UPDATE/ZoidKickpng.png');
-    images[0] = loadImage('UPDATE/OBSIDIANKICK.png');
+    images[0] = loadImage('UPDATE/ObsidianKICK.png');
     images[1] = loadImage('UPDATE/ZOIDSUPERPUNCH.png');
     zoidIntroSpeech = loadImage('UPDATE/ZoidSpeech.gif');
     obsdianIntroSpeech = loadImage('UPDATE/ObsidianSpeech.gif');
-    zoidWin = loadImage('UPDATE/ZoidWinsgif.gif');
+    zoidWin = loadImage('UPDATE/ZoidWinsGif.gif');
     byeZoid = loadImage('UPDATE/BYEZOID.gif');
-    intro = loadImage('UPDATE/zoid.gif');
+    intro = loadImage('UPDATE/Zoid.gif');
     myFont = loadFont('FG.ttf');
 }
 
