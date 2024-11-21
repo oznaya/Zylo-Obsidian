@@ -162,6 +162,21 @@ function draw() {
             console.log("Default");
         }
 
+        if(keyIsPressed){
+            if(key == "a" || key == "A"){
+                currentShape = 0;
+                console.log("A pressed");
+            } else if(key == "s" || key == "S"){
+                currentShape = 1;
+                console.log("S pressed");
+            } else if(key == "d" || key == "D"){
+                currentShape = 2;
+                console.log("D pressed");
+
+            }
+            
+        }
+
         shapes[currentShape]();
 
         if (millis() - lastImageChangeTime > imageChangeInterval) {
@@ -171,7 +186,7 @@ function draw() {
             randomImageStartTime = millis();
         }
 
-        setTimeout(showEnd, 30000);
+       // setTimeout(showEnd, 30000);
 
         //debugMode = false; // Set to true to enable debug mode
 
@@ -192,9 +207,9 @@ function draw() {
    
     }
 
-  if(showEndText){
-    showEnd(); 
-  }
+//   if(showEndText){
+//     showEnd(); 
+//   }
 
 
     console.log(startAudio);
@@ -225,6 +240,7 @@ function keyPressed() {
         startTime = millis();
         draw = showImage;
     }
+
 }
 
 function showImage() {
